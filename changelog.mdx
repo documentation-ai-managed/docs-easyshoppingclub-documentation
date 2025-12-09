@@ -1,0 +1,130 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and fixes in EasyShoppingClub.
+---
+
+## Stay Up to Date
+
+EasyShoppingClub releases updates regularly to enhance your shopping experience, improve performance, and fix issues. You receive notifications via the dashboard and email when new versions launch. Check this changelog for details on changes that affect your integrations and usage.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or GitHub releases to get instant notifications about new versions.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Latest: v2.1.0" icon="zap" href="#v210">
+    Real-time inventory updates and faster checkout.
+  </Card>
+  <Card title="v2.0.0" icon="rocket" href="#v200">
+    Major API redesign with GraphQL support.
+  </Card>
+  <Card title="v1.5.0" icon="package" href="#v150">
+    Enhanced mobile SDK and bug fixes.
+  </Card>
+</Columns>
+
+## Upgrade Guide
+
+Follow these steps to upgrade your EasyShoppingClub integration safely.
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+    Export your current orders and user data using the dashboard export tool.
+  </Step>
+  <Step title="Update SDK" icon="download">
+    Install the latest version based on your platform.
+  </Step>
+  <Step title="Test Integration" icon="play">
+    Run your test suite to verify API endpoints work.
+  </Step>
+  <Step title="Deploy" icon="upload">
+    Push changes to production and monitor for issues.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="npm (Node.js)" icon="package">
+    ```bash
+    npm install easyshoppingclub-sdk@latest
+    ```
+  </Tab>
+  <Tab title="PyPI (Python)" icon="python">
+    ```bash
+    pip install easyshoppingclub-sdk==2.1.0
+    ```
+  </Tab>
+  <Tab title="Maven (Java)" icon="java">
+    ```xml
+    <dependency>
+      <groupId>com.easyshoppingclub</groupId>
+      <artifactId>sdk</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+    ```
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  import { EasyShoppingClub } from 'easyshoppingclub-sdk';
+  const client = new EasyShoppingClub({ apiKey: 'your-api-key' });
+  const orders = await client.orders.list();
+  ```
+  ```python
+  from easyshoppingclub import Client
+  client = Client(api_key="your-api-key")
+  orders = client.orders.list()
+  ```
+</CodeGroup>
+
+## Release History
+
+<Update label="2024-10-15" description="v2.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time inventory sync via WebSockets for live stock updates.
+- Introduced bulk order import from CSV files in the dashboard.
+
+## Improvements
+
+- Checkout process now completes `<30%` faster on average.
+- Enhanced search with fuzzy matching for product names.
+
+## Bug Fixes
+
+- Fixed cart abandonment tracking in analytics.
+- Resolved OAuth token refresh issues during long sessions.
+
+</Update>
+
+<Update label="2024-09-20" description="v2.0.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Migrated from REST to GraphQL API endpoints. Update your queries accordingly.
+
+## New Features
+
+- Full GraphQL API support with schema explorer in dashboard.
+- Affiliate program integration with commission tracking.
+
+## Improvements
+
+- Dashboard now supports dark mode and custom themes.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.5.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Mobile SDK optimized for React Native and Flutter.
+- Added webhook retries with exponential backoff.
+
+## Bug Fixes
+
+- Corrected pricing calculation errors for multi-currency carts.
+- Fixed user profile sync delays with external auth providers.
+
+</Update>

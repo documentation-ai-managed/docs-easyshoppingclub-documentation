@@ -1,0 +1,125 @@
+---
+title: Welcome to EasyShoppingClub
+description: An overview of the EasyShoppingClub platform, designed for organizing and managing project documentation efficiently.
+---
+
+## Overview
+
+EasyShoppingClub empowers you to create, organize, and manage your project documentation with ease. You get a centralized space for all your docs, supporting Markdown, MDX, and interactive components. Build knowledge bases, API references, and tutorials that scale with your projects.
+
+Whether you document codebases, user guides, or internal wikis, EasyShoppingClub handles versioning, search, and collaboration seamlessly. Start writing immediately—no complex setup required.
+
+## Key Features
+
+Discover the core capabilities that make EasyShoppingClub your go-to documentation platform.
+
+<Columns cols={3}>
+  <Card title="Interactive Components" icon="components" href="/docs/components">
+    Embed `<Steps>`, `<Tabs>`, `<Cards>`, and more directly in your MDX files for engaging docs.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="/docs/versioning">
+    Track changes, maintain multiple versions, and roll back effortlessly with Git integration.
+  </Card>
+  <Card title="Advanced Search" icon="search" href="/docs/search">
+    Full-text search across all docs, with syntax highlighting and filters for quick results.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Collaboration" icon="users" href="/docs/collaboration">
+    Invite team members, assign roles, and review changes in real-time.
+  </Card>
+  <Card title="Custom Domains" icon="globe" href="/docs/domains">
+    Host your docs on your domain with custom branding and SEO optimization.
+  </Card>
+</Columns>
+
+## Benefits
+
+You save time with intuitive editing tools and preview features. Teams collaborate without version conflicts, and readers find information instantly. Scale from small projects to enterprise wikis effortlessly.
+
+| Feature | Benefit |
+|---------|---------|
+| MDX Support | Rich, interactive content without leaving Markdown |
+| Real-time Preview | Edit and see changes instantly |
+| Analytics | Track doc usage and popular sections |
+
+<Callout kind="tip">
+  Pro tip: Use the visual editor for non-technical users alongside MDX for advanced layouts.
+</Callout>
+
+## How to Get Started
+
+Follow these steps to launch your first documentation site.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at [easyshoppingclub.com](https://easyshoppingclub.com) with your email or GitHub.
+  </Step>
+  <Step title="New Workspace" icon="plus">
+    Click "New Workspace" and name it for your project, like `my-app-docs`.
+  </Step>
+  <Step title="Upload Docs" icon="upload">
+    Drag and drop your MDX files or connect your Git repo.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Preview, then hit Publish. Your site goes live at a custom URL.
+  </Step>
+</Steps>
+
+### Platform-Specific Setup
+
+<Tabs>
+  <Tab title="npm (Node.js)" icon="package">
+    Install the CLI for local development:
+
+    <CodeGroup tabs="CLI,SDK">
+      ```bash
+      npm install -g @easyshoppingclub/cli
+      easydoc init my-project
+      easydoc dev
+      ```
+      ```javascript
+      // SDK example for embedding
+      import { EasyDoc } from '@easyshoppingclub/sdk';
+      const doc = new EasyDoc({ apiKey: 'your-key' });
+      await doc.publish('/introduction');
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="GitHub" icon="github">
+    Connect your repo directly:
+
+    1. Go to Integrations > GitHub.
+    2. Authorize and select repo.
+    3. Docs auto-build on push.
+  </Tab>
+  <Tab title="VS Code" icon="code">
+    Use the extension:
+
+    ```bash
+    code --install-extension easyshoppingclub.vscode-docs
+    ```
+
+    Edit MDX with live preview and one-click publish.
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Configuration" default-open="false">
+  Customize your site with a `easydoc.config.js`:
+
+  ```javascript
+  module.exports = {
+    theme: 'default',
+    nav: [
+      { title: 'Intro', href: '/introduction' },
+      { title: 'API', href: '/api' }
+    ],
+    sidebar: true
+  };
+  ```
+
+  Deploy with `easydoc deploy`.
+</Expandable>
+
+Ready to build? Your first doc publishes in under 5 minutes. Explore components next for richer content.

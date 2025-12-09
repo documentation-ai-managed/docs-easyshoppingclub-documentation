@@ -1,0 +1,119 @@
+---
+title: Managing Your Documentation
+description: Learn how to create, edit, and maintain your project documentation within the platform.
+---
+
+## Overview
+
+You manage all your EasyShoppingClub project documentation directly in this platform. Create new pages, edit existing ones, track changes with version history, and use powerful search and navigation tools to keep everything organized. Follow these guides to get started quickly.
+
+<Columns cols={3}>
+  <Card title="Create Pages" icon="file-plus" href="#creating-pages">
+    Build new documentation from scratch or templates.
+  </Card>
+  <Card title="Edit Content" icon="edit-3" href="#editing-pages">
+    Update pages with rich MDX components and previews.
+  </Card>
+  <Card title="Track Changes" icon="git-branch" href="#version-history">
+    Review revisions and restore previous versions.
+  </Card>
+</Columns>
+
+## Creating Pages
+
+Start by creating new documentation pages to expand your knowledge base.
+
+<Steps>
+  <Step title="Navigate to Pages" icon="layout">
+    Go to the **Documentation** section in the sidebar.
+  </Step>
+  <Step title="Add New Page" icon="plus">
+    Click **New Page** and select a template or blank MDX file.
+  </Step>
+  <Step title="Add Frontmatter" icon="code">
+    Insert YAML frontmatter at the top of your page.
+  </Step>
+  <Step title="Publish" icon="upload">
+    Preview changes, then click **Publish** to make it live.
+  </Step>
+</Steps>
+
+Use this structure for every new page:
+
+<CodeGroup tabs="MDX Frontmatter,Bash CLI">
+  ```mdx
+---
+title: My New Guide
+description: A brief overview of this guide.
+---
+  ```
+  ```bash
+mkdir -p docs/guides
+touch docs/guides/my-guide.mdx
+echo '---
+title: My New Guide
+description: A brief overview.
+---' > docs/guides/my-guide.mdx
+  ```
+</CodeGroup>
+
+<Callout kind="tip">
+  Always include frontmatter with `title` and `description` for proper navigation and SEO.
+</Callout>
+
+## Editing Pages
+
+Edit pages using the built-in visual editor or raw MDX for advanced customization.
+
+<Tabs>
+  <Tab title="Web Editor" icon="globe">
+    Open any page, click **Edit**, and use the toolbar to add headings, components, or images. Changes save automatically with previews.
+  </Tab>
+  <Tab title="Markdown Mode" icon="code">
+    Switch to **Source** view for full MDX control. Add components like `<Callout>` or code blocks.
+  </Tab>
+  <Tab title="CLI Sync" icon="terminal">
+    Edit locally with your preferred editor, then push changes:
+
+    ```bash
+    git add docs/guides/my-guide.mdx
+    git commit -m "Update installation guide"
+    git push origin main
+    ```
+  </Tab>
+</Tabs>
+
+## Version History and Revisions
+
+Access full version history to track changes and revert if needed.
+
+<ExpandableGroup>
+  <Expandable title="View Revisions" default-open="true">
+    On any page, click **History** in the top-right menu. See a timeline of edits with authors, dates, and diffs.
+
+    | Revision | Date       | Author     | Changes                  |
+    |----------|------------|------------|--------------------------|
+    | v1.2.0  | 2024-10-15 | Alice     | Added Steps component   |
+    | v1.1.0  | 2024-10-10 | Bob       | Fixed code examples     |
+    | v1.0.0  | 2024-10-01 | You       | Initial page creation   |
+  </Expandable>
+  <Expandable title="Restore Version">
+    Select a previous revision and click **Restore**. This creates a new version without overwriting history.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="info">
+  Revisions are saved every 30 seconds during edits and on publish. No changes are lost.
+</Callout>
+
+## Search and Navigation Features
+
+Quickly find content with these tools:
+
+- **Global Search**: Press `<kbd>Ctrl</kbd>+<kbd>K</kbd>` (or `<kbd>Cmd</kbd>+<kbd>K</kbd> on Mac) to search titles, content, and tags.
+- **Sidebar Navigation**: Auto-generated from page hierarchy.
+- **Breadcrumbs**: Shows your current path, e.g., Home > Guides > Managing Docs.
+
+Customize navigation by adding `sidebar: true` to frontmatter or organizing files in folders like `docs/guides/`.
+
+This setup keeps your documentation scalable and user-friendly as your EasyShoppingClub project grows.

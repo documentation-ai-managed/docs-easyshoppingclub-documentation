@@ -1,0 +1,110 @@
+---
+title: Quick Start Guide
+description: Get up and running with EasyShoppingClub by setting up your first documentation space in minutes.
+---
+
+## Get Started in Minutes
+
+Follow these steps to create your EasyShoppingClub account, set up a documentation space, and upload your first documents. You complete the entire process in under five minutes. EasyShoppingClub provides a simple web interface and CLI for flexible workflows.
+
+<Callout kind="tip">
+  Bookmark your dashboard after signup. Use the `{API_KEY}` from account settings for CLI authentication.
+</Callout>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Create Your Account" icon="user-plus">
+    Visit `https://app.easyshoppingclub.com/signup` and enter your email, name, and password. Verify your email via the confirmation link.
+
+    Choose your plan during signup:
+    - Free: Up to 5 spaces, 100 documents.
+    - Pro: Unlimited spaces, advanced search.
+
+    After verification, you land on the dashboard.
+  </Step>
+
+  <Step title="Set Up a Documentation Space" icon="folder-plus">
+    Click **New Space** on the dashboard.
+
+    Enter details:
+    - Name: `My Project Docs`
+    - Description: `Documentation for my e-commerce app`
+    - Brand Color: `#3B82F6`
+
+    Click **Create**. Your space appears in the sidebar with a default `index.mdx`.
+
+    <Image
+      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&fit=crop"
+      alt="New documentation space dashboard"
+      width="800"
+      height="400"
+    />
+  </Step>
+
+  <Step title="Upload Your First Documents" icon="upload-cloud">
+    Add content via web upload or CLI.
+
+    Copy your `{SPACE_ID}` and `{API_KEY}` from space settings.
+  </Step>
+</Steps>
+
+## Upload Methods
+
+Choose web upload for quick files or CLI for automation.
+
+<Tabs>
+  <Tab title="Web UI" icon="globe">
+    Drag files into the space editor or click **Upload**.
+
+    Supported formats: `.mdx`, `.md`, `.txt`, images, PDFs.
+
+    Reorder documents in the sidebar after upload.
+  </Tab>
+
+  <Tab title="CLI" icon="terminal">
+    Install the CLI first.
+
+    <CodeGroup tabs="npm,yarn">
+```bash
+npm install -g @easyshoppingclub/cli
+```
+```bash
+yarn global add @easyshoppingclub/cli
+```
+    </CodeGroup>
+
+    Authenticate and upload:
+
+````bash
+esc login --api-key YOUR_API_KEY
+esc upload ./docs/intro.mdx --space my-project-docs
+````
+  </Tab>
+</Tabs>
+
+## Next Steps
+
+Explore these resources to customize your space.
+
+<Columns cols={3}>
+  <Card title="Customize Theme" icon="palette" href="/docs/customize">
+    Adjust colors, logos, and layouts.
+  </Card>
+
+  <Card title="Add Search" icon="search" href="/docs/search">
+    Enable full-text search across documents.
+  </Card>
+
+  <Card title="Share Spaces" icon="share-2" href="/docs/sharing">
+    Generate public links or invite collaborators.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Upload fails**: Check `{API_KEY}` permissions.
+  - **Space not visible**: Refresh dashboard or check email verification.
+  - **CLI errors**: Run `esc --version` to confirm installation.
+</Expandable>
+
+Your first space is live! Publish it via the **Share** button to get a custom URL like `docs.easyshoppingclub.com/my-project-docs`.
